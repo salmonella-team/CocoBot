@@ -8,7 +8,7 @@ import settings
 TOKEN = settings.TOKEN
 BOT_HelloWorld = settings.BOT_HelloWorld
 
-bot = commands.Bot(command_prefix="/koko ")
+bot = commands.Bot(command_prefix="/coco ")
 
 @bot.event
 async def on_ready():
