@@ -38,5 +38,4 @@ def changeShareFile(file_name: str) -> str:
     )
 
     r = xmltodict.parse(r.text)
-    print(r)
     return r["ocs"]["data"]['url']
