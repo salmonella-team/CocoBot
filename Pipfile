@@ -12,6 +12,7 @@ webdavclient3 = "*"
 requests = "*"
 xmltodict = "*"
 "discord.py" = "*"
+pytube = "*"
 
 [requires]
 python_version = "3.8"

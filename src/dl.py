@@ -1,15 +1,12 @@
-import subprocess
 import youtube_dl
 
 def dlYoutube(url):
-    # subprocess.run(args=["youtube-dl", "-o", "./src/%(title)s", "-f", "bestvideo+bestaudio", "--merge-output-format", "mkv", url])
-    subprocess.run(args=["youtube-dl", "-o", "./src/%(title)s", "-f", "bestvideo+bestaudio", "--recode-video", "mp4", url])
-    # OPTS = {
-    #     "outtmpl": "{VIDEO_DIR}%(title)s".format(VIDEO_DIR="./src/"),
-    #     "format": "bestvideo+bestaudio",
-    #     "merge-output-format": "mkv"
-    # }
-    youtube = youtube_dl.YoutubeDL()
+    OPTS = {
+        "outtmpl": "{VIDEO_DIR}%(id)s".format(VIDEO_DIR="./tmp/"),
+    }
+    youtube = youtube_dl.YoutubeDL(OPTS)
     info = youtube.extract_info(url)
-    filename = info["title"] + "." + "mp4"
+    print(info)
+    filename = info["id"]
+    filename = filename.replace('/', '_')
     return filename
